@@ -31,7 +31,7 @@ export function correctedCalibrationValue(input: string): number {
   return (digits[0] * 10) + digits[digits.length - 1];
 }
 
-const data = await Bun.file("calibration.txt").text();
+const data = await Bun.file("day1-input.txt").text();
 const totalCalibration = data.split("\n").map((line) => {
   return calibrationValue(line);
 }).reduce((a, b) => a + b, 0);
